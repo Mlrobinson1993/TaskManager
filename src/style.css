@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-size: 16px;
+	font-family: 'Roboto', sans-serif;
+}
+
+#root {
+	min-height: 100vh;
+	width: 100vw;
+	background: rgb(3, 9, 31);
+}
+
+.active-navlink {
+	border-bottom: 3px solid white !important;
+}
+
+.anim {
+	position: absolute;
+	left: 100%;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background: none repeat scroll 0 0 #508ec3;
+	opacity: 0.8;
+	-webkit-animation: ui-spinner-rotate-left 2s infinite;
+	animation: ui-spinner-rotate-left 2s infinite;
+	-webkit-transform-origin: 0 50% 0;
+	transform-origin: 0 50% 0;
+}
+.left .anim {
+	border-bottom-left-radius: 0;
+	border-top-left-radius: 0;
+}
+.right .anim {
+	border-bottom-right-radius: 0;
+	border-top-right-radius: 0;
+	left: -100%;
+	-webkit-transform-origin: 100% 50% 0;
+	transform-origin: 100% 50% 0;
+}
+
+.ouro {
+	position: absolute;
+
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: inline-block;
+	height: 46px;
+	width: 46px;
+
+	border-radius: 50%;
+	background: none repeat scroll 0 0 #dddddd;
+	overflow: hidden;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) inset, 0 0 25px rgba(0, 0, 255, 0.075);
+}
+
+.ouro:after {
+	content: '';
+	position: absolute;
+	top: 9px;
+	left: 9px;
+	display: block;
+	height: 28px;
+	width: 28px;
+	background: none repeat scroll 0 0 rgb(3, 9, 31);
+	border-radius: 50%;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+*/ .ouro > span {
+	position: absolute;
+	height: 100%;
+	width: 50%;
+	overflow: hidden;
+}
+.left {
+	left: 0;
+}
+.right {
+	left: 50%;
+}
+
+@keyframes ui-spinner-rotate-left {
+	0% {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(180deg);
+	}
+	75% {
+		transform: rotate(180deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.todolist__item--checkbox:not(:checked),
+.todolist__item--checkbox:checked {
+	position: absolute;
+	left: -9999px;
+}
+.todolist__item--checkbox:not(:checked) + .todolist__item--label,
+.todolist__item--checkbox:checked + .todolist__item--label {
+	position: relative;
+	padding-left: 1.95em;
+	cursor: pointer;
+}
+
+/* checkbox aspect */
+.todolist__item--checkbox:not(:checked) + .todolist__item--label:before,
+.todolist__item--checkbox:checked + .todolist__item--label:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	transform: translateY(-2px);
+	width: 1.25em;
+	height: 1.25em;
+	border: 2px solid steelblue;
+	background: #fff;
+	border-radius: 50%;
+	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* checked mark aspect */
+.todolist__item--checkbox:not(:checked) + .todolist__item--label:after,
+.todolist__item--checkbox:checked + .todolist__item--label:after {
+	border-radius: 50%;
+	height: 1.1em;
+	width: 1.1em;
+	position: absolute;
+	top: 0.15em;
+	left: 0.22em;
+	font-size: 1.3em;
+	line-height: 0.8;
+	color: #09ad7e;
+	transition: all 0.2s;
+}
+/* checked mark aspect changes */
+.todolist__item--checkbox:not(:checked) + .todolist__item--label:after {
+	opacity: 0;
+	transform: scale(0);
+}
+.todolist__item--checkbox:checked + .todolist__item--label:after {
+	opacity: 1;
+	transform: scale(1);
+}
+
+/* accessibility */
+.todolist__item--checkbox:checked:focus + .todolist__item--label:before,
+.todolist__item--checkbox:not(:checked):focus + .todolist__item--label:before {
+	border: 2px solid steelblue;
+}
+
+/* hover style just for information */
+.todolist__item--label:hover:before {
+	border: 2px solid #4778d9 !important;
+}
