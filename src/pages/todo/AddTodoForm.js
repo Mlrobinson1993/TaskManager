@@ -47,6 +47,23 @@ const FormContainer = styled.div`
 	flex-direction: column;
 	justify-content: space-around;
 	padding: 1.5rem 3rem;
+
+	@media (max-width: 852px) {
+		width: 60vw;
+		height: 40vh;
+		padding: 1.5rem 3rem;
+	}
+	@media (max-width: 600px) {
+		width: 80vw;
+		height: 40vh;
+		padding: 1.5rem;
+	}
+
+	@media (max-width: 400px) {
+		width: 90vw;
+		height: 40vh;
+		padding: 1.5rem;
+	}
 `;
 
 const TextContainer = styled.div`

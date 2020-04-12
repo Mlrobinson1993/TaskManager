@@ -46,11 +46,11 @@ const AddItemInput = ({ addTodo, activateBtn }) => {
 			/>
 
 			<BtnContainer>
-				<button className='submit' type='submit'>
-					Save
-				</button>
 				<button className='cancel' type='button' onClick={handleCancel}>
 					Cancel
+				</button>
+				<button className='submit' type='submit'>
+					Save
 				</button>
 			</BtnContainer>
 		</Form>
