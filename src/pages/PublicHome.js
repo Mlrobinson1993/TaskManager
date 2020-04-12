@@ -13,14 +13,20 @@ export default function PublicHome() {
 				<h1>Todo List</h1>
 				<p>
 					This is a task management app, created to help you with organisation,
-					time management and productivity.
+					time management and productivity. This application enables you to
+					create, edit and delete todos. Your todos are saved to Google's
+					Firestore, allowing you to access them from anywhere on any
+					internet-enabled device. The app also uses Google's Firebase
+					Authentication, forcing new users to verify their email before
+					accessing protected pages and using the application. You're also able
+					to recover forgotten passwords, edit your personal details and delete
+					your account.
 				</p>
 
 				<TagContainer>
 					<Tag>React.js</Tag> <Tag>Styled Components</Tag> <Tag>Firebase</Tag>{' '}
 					<Tag>Formik</Tag>
 				</TagContainer>
-
 				<BtnContainer>
 					<Btn to='signin'>Sign In</Btn>
 					<Btn bgColor='rgb(239,138,132)' to='signup'>
@@ -101,6 +107,8 @@ const TextContainer = styled.div`
 	p {
 		color: white;
 		margin-bottom: 1rem;
+		line-height: 22px;
+		font-weight: 400;
 	}
 
 	@media (max-width: 750px) {
