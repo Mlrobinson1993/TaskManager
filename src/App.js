@@ -17,12 +17,6 @@ import { AuthContext } from './context/AuthContext';
 
 function App() {
 	const { activeUser, isLoading, setIsLoading } = useContext(AuthContext);
-	useEffect(() => {
-		setIsLoading(true);
-		setTimeout(() => {
-			setIsLoading(false);
-		}, 1000);
-	}, []);
 
 	let routes;
 
